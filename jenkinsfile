@@ -1,6 +1,6 @@
 node {
 environment{
-PATH="C:\\Program Files\\Git\\usr\\bin"
+PATH="C:\\Program Files\\Git\\usr\\bin\\nohup.exe"
 }
 
     stage("checkout SCM"){
