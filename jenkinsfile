@@ -1,4 +1,8 @@
 node {
+environment{
+PATH="C:\Program Files\Git\usr\bin"
+}
+{
     stage("checkout SCM"){
         git branch: 'master',url:'https://github.com/subbaraoveeragandham/AngularDemo.git'
     }
