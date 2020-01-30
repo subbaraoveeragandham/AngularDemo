@@ -1,0 +1,12 @@
+node {
+    stage("checkout SCM"){
+        git branch: 'master',url:'https://github.com/subbaraoveeragandham/AngularDemo.git'
+    }
+    stage("install node modules")
+    {
+        sh "npm install"
+    }
+    stage("build"){
+        sh "ng test --single-run true"
+    }
+}
