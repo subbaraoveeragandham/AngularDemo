@@ -1,4 +1,11 @@
 node {
+<<<<<<< HEAD
+=======
+environment{
+PATH="C:\\Program Files\\Git\\usr\\bin\\nohup.exe"
+}
+
+>>>>>>> 6f4b31294a79e6d911b582c4ff642d54ed9d43ee
     stage("checkout SCM"){
         git branch: 'master',url:'https://github.com/subbaraoveeragandham/AngularDemo.git'
     }
@@ -9,4 +16,8 @@ node {
     stage("build"){
         sh "ng test --single-run true"
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6f4b31294a79e6d911b582c4ff642d54ed9d43ee
