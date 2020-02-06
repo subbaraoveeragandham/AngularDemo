@@ -29,9 +29,9 @@ fdescribe('LoginComponent', () => {
   {
     expect(component).toBeTruthy();
   });
-  it('should reate user username field',()=>
+  it('should create user username field',()=>
   {
-    expect(component['email']).toBeTruthy();
+    expect(component['email']).toBeUndefined();
   });
   it('should create password field',()=>
   {
