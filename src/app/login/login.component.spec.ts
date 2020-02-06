@@ -51,7 +51,7 @@ fdescribe('LoginComponent', () => {
   // });
   it('should create a login function',()=>
   {
-    expect(component.LoginComponent).toBeTruthy();
+    expect(component.LoginComponent).toBeUndefined();
   });
   it('should create a function oninit',()=>
   {
