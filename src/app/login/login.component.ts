@@ -6,9 +6,10 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username ='Test';
-  password = 'Test@123';
+  username ='admin';
+  password = 'admin';
   LoginComponent: any;
+  message: string;
 
 
   constructor() { }
@@ -18,6 +19,11 @@ export class LoginComponent implements OnInit {
   trylogin(uname,pass)
   {
     console.log(uname+" "+pass)
+    if(uname === this.username && pass === this.password) {
+      this.message = "Login Successfull"
+    }else {
+      this.message = "Invalid Credentials"
+    }
   }
 
 }

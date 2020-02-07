@@ -14,9 +14,6 @@ const routes:Routes=[
   },
   {
     path:'Register',component:RegisterComponent
-  },
-  {
-    path:'',redirectTo:'/Home',pathMatch:'full'
   }
 ]
 

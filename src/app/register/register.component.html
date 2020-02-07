@@ -1,44 +1,51 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/Home">Home</a>
-         <!-- <a class="nav-item nav-link" roterLink="/Login">Logout</a>  -->
-       
-    </div>
-    <ul class="navbar-nav ml-auto">
-        <li>
-            <a class="nav-link" routerLink="/Login">Login</a>
-        </li>
-        <li>
-            <a class="nav-link" routerLink="/Register">Register</a>
-        </li>
-    </ul>
-  </nav>
-  
-  <div class="card bg-dark text-white mt-5" style="margin: auto; width: 600px;">
-    <div class="card-body">
-        <h5 class="card-title">Create Account</h5>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" name="name" required >
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <!--  -->
+    <!-- Your Code Goes Here-->
+    <div class="card bg-dark text-white mt-5" style="margin: auto; width: 600px;">
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+          <div [class]="'form-group'">
+            <label for="email">Email or Username</label>
+            <input type="text" [class]="'form-control'" id="email" formControlName="email">
           </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" id="email" class="form-control" name="email" required >
-          </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" class="form-control" name="username" required >
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" name="password" required >
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" (click)="trylogin()">
-              Register
-            </button>
+          <div *ngIf="registerForm.controls.email.invalid && registerForm.controls.email.dirty"
+            [class]="'alert alert-danger'" id="emailError">
+            <span *ngIf="registerForm.controls.email.errors?.required"> field is required</span>
           </div>
 
+          <!-- control states of afield ==> valid invalid dirty pristine touched untouched -->
+
+
+          <div [class]="'form-group'">
+            <label for="password">Password</label>
+            <input type="password" [class]="'form-control'" id="password" formControlName="password">
+          </div>
+          <div *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.dirty"
+            [class]="'alert alert-danger'" id="passwordError">
+            <span *ngIf="registerForm.controls.password.errors?.required">Password Required</span>
+          </div>
+
+          <div [class]="'form-group'">
+            <label for="uname">User Name</label>
+            <input type="text" [class]="'form-control'" id="uname" formControlName="uname">
+          </div>
+          <div *ngIf="registerForm.controls.uname.invalid && registerForm.controls.uname.dirty"
+            [class]="'alert alert-danger'" id="unameError">
+            <span *ngIf="registerForm.controls.uname.errors?.required">username Required</span>
+          </div>
+
+        <div class="form-gruop">
+          <button type="submit" [class]="'btn btn-info'" [disabled]="registerForm.invalid">Register</button>
+        </div>
+          <span>{{message}}</span>
+        
+         
+
+
+        </form>
+      </div>
     </div>
-    
   </div>
+</div>
